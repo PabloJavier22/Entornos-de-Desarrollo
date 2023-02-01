@@ -1,3 +1,4 @@
 #Proyecto ED
 ##Pablo Javier 
 ##Dani
+./mvnw spring-boot:run

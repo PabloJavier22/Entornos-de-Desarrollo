@@ -10,6 +10,6 @@ public class UserController {
 
     @GetMapping("/usuarios")
     public String displayUsers(){
-        return "listaususarios";
+        return "listausuarios";
     }
 }

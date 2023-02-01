@@ -1,23 +1,22 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo;
 
-import java.util.Date;
 
 public class Sorteo {
     private String descripcion;
-    private Date fecha;
+    private String fecha;
     private String estado; 
 
-    public Sorteo(String descripcion, Date fecha, String estado) {
+    public Sorteo(String descripcion, String fecha, String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = estado;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

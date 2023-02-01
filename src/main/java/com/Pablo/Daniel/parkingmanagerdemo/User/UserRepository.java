@@ -10,7 +10,7 @@ public UserRepository() {
 }
 public List<User> getALL(){
     this.usuarios.clear();
-    this.usuarios.add(new User("pmungar408@g.educaand.es","Pablo Javier Muñoz García"));
+    this.usuarios.add(new User("Pablo Javier","Muñoz","García","pmungar408@g.educaand.es"));
     return this.usuarios;
     }
 }

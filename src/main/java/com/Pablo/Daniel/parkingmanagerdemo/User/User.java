@@ -1,21 +1,29 @@
 package com.Pablo.Daniel.parkingmanagerdemo.User;
 
+
 public class User {    
-    
+
+    private int idUsu; 
     private String nombre;
     private String email;
     private String primerApellido;
     private String segundoApellido;
 
 
-    public User(String nombre, String primerApellido, String segundoApellido, String email) {
+    public User(int idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
+        this.idUsu = idUsu;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.email = email;
     }
 
-    
+    public int getidUsu() {
+      return idUsu;
+    }
+    public void setidUsu(int idUsu) {
+       this.idUsu = idUsu;
+    }
     public String getNombre() {
         return nombre;
     }

@@ -11,7 +11,26 @@ public class TestUser {
     private User pablo;
     @BeforeEach
     public void init(){
-     this.pablo = new User("Pablo Javier","Muñoz","García","pmungar@g.educaand.es");
+     this.pablo = new User(1,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es");
+    }
+    @Test
+    public void check_user_id(){
+        //Arrange
+        int esperado = 1;
+        //Act
+        int resultado = pablo.getidUsu();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+    @Test
+    public void check_user_id_set(){
+        //Arrange
+        int esperado = 2;
+        //Act
+        pablo.setidUsu(2);
+        int resultado = pablo.getidUsu();
+        //Assert
+        assertEquals(esperado, resultado);
     }
     @Test
     public void check_user_nombre(){

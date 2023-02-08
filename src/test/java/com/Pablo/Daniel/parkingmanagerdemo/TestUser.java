@@ -24,11 +24,31 @@ public class TestUser {
     }
 
     @Test
-    public void check_user_apellido(){
+    public void check_user_primerApellido(){
         //Arrange
         String esperado = "Muñoz";
         //Act
         String resultado = pablo.getPrimerApellido();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    public void check_user_segundoApellido(){
+        //Arrange
+        String esperado = "García";
+        //Act
+        String resultado = pablo.getSegundoApellido();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+
+    @Test
+    public void check_user_correo(){
+        //Arrange
+        String esperado = "pmungar@g.educaand.es";
+        //Act
+        String resultado = pablo.getEmail();
         //Assert
         assertEquals(esperado, resultado);
     }

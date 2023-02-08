@@ -1,11 +1,12 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo;
 
 
-public class Sorteo {
+public class Sorteo {    
+    private int IDSrt;
     private String descripcion;
     private String fecha;
     private String estado; 
-    private int IDSrt;
+
 
  public Sorteo(int IDSrt, String descripcion, String fecha, String estado) {
         this.descripcion = descripcion;

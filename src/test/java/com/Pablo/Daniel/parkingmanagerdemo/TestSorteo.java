@@ -17,19 +17,19 @@ public class TestSorteo {
     @Test
     public void check_sorteo_IDSrt(){
         //Arrange
-        int esperado = 001;
+        long esperado = 001;
         //Act
-        int resultado = sorteo.getIDSrt();
+        long resultado = sorteo.getIDSrt();
         //Assert
         assertEquals(esperado, resultado);
        }
     @Test
     public void check_sorteo_IDSrt_set(){
         //Arrange
-        int esperado = 001;
+        long esperado = 001;
         //Act
         sorteo.setIDSrt(001);
-        int resultado = sorteo.getIDSrt();
+        long resultado = sorteo.getIDSrt();
         //Assert
         assertEquals(esperado, resultado);
        }

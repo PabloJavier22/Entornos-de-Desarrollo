@@ -1,16 +1,22 @@
 package com.Pablo.Daniel.parkingmanagerdemo.User;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class User {    
-
-    private int idUsu; 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idUsu; 
     private String nombre;
     private String email;
     private String primerApellido;
     private String segundoApellido;
 
 
-    public User(int idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
+    public User(Long idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
         this.idUsu = idUsu;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
@@ -18,10 +24,10 @@ public class User {
         this.email = email;
     }
 
-    public int getidUsu() {
+    public Long getidUsu() {
       return idUsu;
     }
-    public void setidUsu(int idUsu) {
+    public void setidUsu(Long idUsu) {
        this.idUsu = idUsu;
     }
     public String getNombre() {

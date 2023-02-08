@@ -1,18 +1,39 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd%22%3E
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/%22%3E
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/icons/parking-lot.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
     <title>Usuarios</title>
-</head>
-<body>
-    <h2>Aqui aparecen los Usuarios registrados.</h2>
-    <ul th:each="user: ${users}">
-        <li>
-            <p th:text="${user.name}"></p>
-        </li>
-    </ul>
-
-</body>
+  </head>
+  <body>
+    <div th:insert="~{fragments/navbar :: navbar}"></div>
+    <section class="section is-medium">
+      <div class="container">
+        <h1 class="title is-1 has-text-centered">Usuarios del parking</h1>
+        <table class="table is-bordered is-fullwidth">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Primer apellido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="user:${users}">
+              <td th:text="${user.nombre}"></td>
+              <td th:text="${user.primerApellido}"></td>
+              <td th:text="${user.segundoApellido}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div id="main-footer" th:insert="~{fragments/footer :: footer}"></div>
+  </body>
 </html>

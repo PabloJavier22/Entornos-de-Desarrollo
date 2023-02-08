@@ -5,12 +5,25 @@ public class Sorteo {
     private String descripcion;
     private String fecha;
     private String estado; 
+    private int IDSrt;
 
-    public Sorteo(String descripcion, String fecha, String estado) {
+ public Sorteo(int IDSrt, String descripcion, String fecha, String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.estado = estado;
+        this.IDSrt = IDSrt;
     }
+    
+    public int getIDSrt() {
+        return IDSrt;
+    }
+
+
+
+    public void setIDSrt(int iDSrt) {
+        IDSrt = iDSrt;
+    }
+
 
     public String getFecha() {
         return fecha;

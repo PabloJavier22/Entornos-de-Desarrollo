@@ -11,8 +11,28 @@ public class TestSorteo {
     private Sorteo sorteo;
     @BeforeEach
     public void init(){
-     this.sorteo = new Sorteo("Sorteo de prueba","01/02/2002","En curso");
+     this.sorteo = new Sorteo(001,"Sorteo de prueba","01/02/2002","En curso");
     }
+
+    @Test
+    public void check_sorteo_IDSrt(){
+        //Arrange
+        int esperado = 001;
+        //Act
+        int resultado = sorteo.getIDSrt();
+        //Assert
+        assertEquals(esperado, resultado);
+       }
+    @Test
+    public void check_sorteo_IDSrt_set(){
+        //Arrange
+        int esperado = 001;
+        //Act
+        sorteo.setIDSrt(001);
+        int resultado = sorteo.getIDSrt();
+        //Assert
+        assertEquals(esperado, resultado);
+       }
     @Test
     public void check_sorteo_desc(){
         //Arrange

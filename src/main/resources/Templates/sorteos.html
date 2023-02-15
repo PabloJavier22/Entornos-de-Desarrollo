@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteo</title>
-</head>
-<body>
-    <h2>Aqui apareceran los resultados.</h2>
-</body>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/icons/parking-lot.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" th:href="@{/styles/main.css}" />
+    <title>Usuarios</title>
+  </head>
+  <body>
+    <section class="section is-medium">
+      <div class="container">
+        <h1 class="title is-1 has-text-centered">Usuarios del parking</h1>
+        <table class="table is-bordered is-fullwidth">
+          <thead>
+            <tr>
+              <th>descripcion</th>
+              <th>fecha</th>
+              <th>estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="sorteo:${sorteo}">
+              <td th:text="${sorteo.descripcion}"></td>
+              <td th:text="${sorteo.fecha}"></td>
+              <td th:text="${sorteo.estado}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
 </html>

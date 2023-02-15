@@ -1,13 +1,22 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class Sorteo {    
+@Entity
+
+public class Sorteo {   
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int IDSrt;
     private String descripcion;
     private String fecha;
     private String estado; 
 
-
+ public Sorteo(){}
+ 
  public Sorteo(int IDSrt, String descripcion, String fecha, String estado) {
         this.descripcion = descripcion;
         this.fecha = fecha;

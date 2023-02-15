@@ -1,16 +1,9 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo;
-import java.util.ArrayList;
-import java.util.List;
 
-public class SorteoRepository{
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-private ArrayList<Sorteo> sorteos;
-public SorteoRepository() {
-    sorteos = new ArrayList<>();
-}
-public List<Sorteo> getALL(){
-    this.sorteos.clear();
-    this.sorteos.add(new Sorteo(001,"Primer sorteo plazas parking","01/02/2023","Terminado"));
-    return this.sorteos;
-    }
+@Repository
+public interface SorteoRepository extends CrudRepository<Sorteo,Integer>{
+
 }

@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
+
+
 public class User {    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,7 +17,7 @@ public class User {
     private String primerApellido;
     private String segundoApellido;
 
-
+    public User(){}
     public User(Long idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
         this.idUsu = idUsu;
         this.nombre = nombre;

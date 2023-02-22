@@ -1,4 +1,4 @@
-package com.Pablo.Daniel.parkingmanagerdemo.User;
+package com.Pablo.Daniel.parkingmanagerdemo.user.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

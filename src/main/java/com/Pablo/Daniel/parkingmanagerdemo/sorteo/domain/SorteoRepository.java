@@ -1,4 +1,4 @@
-package com.Pablo.Daniel.parkingmanagerdemo.sorteo;
+package com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.Pablo.Daniel.parkingmanagerdemo.User.User;
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.User;
 
 public class TestUser {
     private User pablo;

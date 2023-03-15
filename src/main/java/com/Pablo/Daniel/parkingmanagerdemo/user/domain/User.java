@@ -11,14 +11,14 @@ import jakarta.persistence.Id;
 public class User {    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idUsu; 
+    private long idUsu; 
     private String nombre;
     private String email;
     private String primerApellido;
     private String segundoApellido;
 
     public User(){}
-    public User(Long idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
+    public User(long idUsu,String nombre, String primerApellido, String segundoApellido, String email) {
         this.idUsu = idUsu;
         this.nombre = nombre;
         this.primerApellido = primerApellido;

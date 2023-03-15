@@ -1,5 +1,7 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +20,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Iterable<User> getAll(){
-        return this.userRepository.findAll();
+    public List<User> readAll(){
+        return (List<User>)userRepository.findAll();
     }
 
 }

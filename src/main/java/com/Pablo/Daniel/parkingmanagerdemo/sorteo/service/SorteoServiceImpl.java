@@ -1,9 +1,11 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo.service;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Sorteo;
+import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.SorteoDao;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.SorteoRepository;
 
 @Service
@@ -19,5 +21,12 @@ public class SorteoServiceImpl implements SorteoService{
     @Override
     public Iterable<Sorteo> getAll(){
         return this.sorteoRepository.findAll();
+    }
+
+    @Override
+    public void register(SorteoDao sorteoDao){
+        Sorteo sorteo = new Sorteo();
+        BeanUtils.copyProperties(sorteoDao, sorteo);
+        this.sorteoRepository.save(sorteo);
     }
 }

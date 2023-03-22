@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Sorteo</title>
+</head>
+<body>
+  <form action="#" th:action="@{/createSorteo}" th:object="${sorteoDao}" method="post">
+ <p>Descripción <input type="text" placeholder="descripcion" th:field="*{descripcion}"></p>
+ <p>Fecha <input type="text" placeholder="fecha" th:field="*{fecha}"></p>
+  <p>Estado <input type="text" placeholder="estado" th:field="*{estado}"></p>
+  <button type="submit">enviar</button>
+</form>
+</body>
+</html>

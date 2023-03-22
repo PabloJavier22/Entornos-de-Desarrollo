@@ -7,4 +7,6 @@ import com.Pablo.Daniel.parkingmanagerdemo.user.domain.*;
 public interface UserService {
   
   public List<User> readAll();
+
+  public void register(UserDao userDao);
 }

@@ -3,6 +3,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserService;
@@ -31,7 +32,8 @@ public class UserController {
     }
 
     @PostMapping("/finalizarregistros")
-    public String createUser(){
+    public String createUser(@ModelAttribute UserDao userDao){
+        this.userService.register(userDao);
         return "redirect:/listausuarios";
     }
 

@@ -3,7 +3,9 @@ package com.Pablo.Daniel.parkingmanagerdemo;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.User;
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserRepository;
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserService;
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserServiceImpl;
@@ -34,6 +37,19 @@ public class UserServiceTest {
     List<User> actualUsers = service.readAll();
 
     assertEquals(userMockedList, actualUsers);
+
+  }
+  @Test
+  void testRegistro(){
+
+    UserRepository mockedRepository = mock(UserRepository.class);
+
+    UserService service = new UserServiceImpl(mockedRepository);
+    UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2");
+
+    service.register(userDao);
+
+    verify(mockedRepository).save(any());
 
   }
 }

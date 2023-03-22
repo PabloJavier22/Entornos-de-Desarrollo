@@ -1,8 +1,12 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.adapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserService;
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
 
 @Controller
 public class UserController {
@@ -18,4 +22,17 @@ public class UserController {
         model.addAttribute("users", userService.readAll());
         return "user/listausuarios";
     }
+
+    @GetMapping("/registros")
+    public String displayRegistros(Model model){
+        UserDao userDao = new UserDao();
+        model.addAttribute("registro", userDao);
+        return "user/registro";
+    }
+
+    @PostMapping("/finalizarregistros")
+    public String createUser(){
+        return "redirect:/listausuarios";
+    }
+
 }

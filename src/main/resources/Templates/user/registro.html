@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+</head>
+<body>
+  <form>
+    <fieldset><legend>Datos Personales</legend>
+  Nombre <input type="text"></input><br>
+  Primer Apellido <input type="text"></input><br>
+  Segundo Apellido <input type="text"></input><br>
+  email <input type="email"></imput><br>
+</fieldset> 
+<form action="#" th:action="@{/finalizarregistros}" method="post">
+  <button type="submit">enviar</button>
+</form>
+ 
+    <button type="reset">reiniciar</button>
+  
+</form>
+</body>
+</html>

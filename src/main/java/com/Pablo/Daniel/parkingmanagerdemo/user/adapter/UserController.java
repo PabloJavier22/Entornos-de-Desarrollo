@@ -24,17 +24,17 @@ public class UserController {
         return "user/listausuarios";
     }
 
-    @GetMapping("/registros")
+    @GetMapping("/createUser")
     public String displayRegistros(Model model){
         UserDao userDao = new UserDao();
-        model.addAttribute("registro", userDao);
+        model.addAttribute("userDao", userDao);
         return "user/registro";
     }
 
-    @PostMapping("/finalizarregistros")
+    @PostMapping("/createUser")
     public String createUser(@ModelAttribute UserDao userDao){
         this.userService.register(userDao);
-        return "redirect:/listausuarios";
+        return "redirect:/usuarios";
     }
 
 }

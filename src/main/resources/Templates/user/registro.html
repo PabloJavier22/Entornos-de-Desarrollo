@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +7,12 @@
   <title>Registrarse</title>
 </head>
 <body>
-  <form>
-    <fieldset><legend>Datos Personales</legend>
-  Nombre <input type="text"></input><br>
-  Primer Apellido <input type="text"></input><br>
-  Segundo Apellido <input type="text"></input><br>
-  email <input type="email"></imput><br>
-</fieldset> 
-<form action="#" th:action="@{/finalizarregistros}" method="post">
+  <form action="#" th:action="@{/createUser}" th:object="${userDao}" method="post">
+ <p>Nombre <input type="text" placeholder="nombre" th:field="*{nombre}"></p>
+ <p>Primer Apellido <input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
+  <p>Segundo Apellido <input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
+  <p>email <input type="email" placeholder="email" th:field="*{email}"></p>
   <button type="submit">enviar</button>
-</form>
- 
-    <button type="reset">reiniciar</button>
-  
 </form>
 </body>
 </html>

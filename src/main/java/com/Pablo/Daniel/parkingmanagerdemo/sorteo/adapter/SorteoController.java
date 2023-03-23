@@ -19,7 +19,7 @@ public class SorteoController {
 
     @GetMapping("/sorteos")
     public String displayUsers(Model model){
-        model.addAttribute("sorteo", sorteoService.getAll());
+        model.addAttribute("sorteo", sorteoService.readAll());
         return "sorteo/sorteos";
     }
 

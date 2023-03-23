@@ -1,5 +1,7 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo.service;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +21,10 @@ public class SorteoServiceImpl implements SorteoService{
     }
 
     @Override
-    public Iterable<Sorteo> getAll(){
-        return this.sorteoRepository.findAll();
+    public List<Sorteo> readAll(){
+        return (List<Sorteo>)sorteoRepository.findAll();
     }
+
 
     @Override
     public void register(SorteoDao sorteoDao){

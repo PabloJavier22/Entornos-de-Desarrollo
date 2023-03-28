@@ -9,10 +9,14 @@
 </head>
 <body>
   <form action="#" th:action="@{/createSorteo}" th:object="${sorteoDao}" method="post">
- <p>Descripción <input type="text" placeholder="descripcion" th:field="*{descripcion}"></p>
- <p>Fecha <input type="text" placeholder="fecha" th:field="*{fecha}"></p>
-  <p>Estado <input type="text" placeholder="estado" th:field="*{estado}"></p>
-  <button type="submit">enviar</button>
+ <p>Descripción<br> <input type="text" placeholder="descripcion" th:field="*{descripcion}"></p>
+ <p>Fecha<br> <input type="text" placeholder="fecha" th:field="*{fecha}"></p>
+  <p>Estado<br> <input type="text" placeholder="estado" th:field="*{estado}"></p>
+  <div>
+    <button type="submit">Enviar</button>
+    <button type="reset">Reset</button>
+  </div>
 </form>
+<a href="/"><button id="return">Volver</button></a>
 </body>
 </html>

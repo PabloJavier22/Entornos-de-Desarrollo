@@ -1,7 +1,6 @@
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: #f2f2f2;
   border-radius: 5px;
   padding: 20px;
@@ -9,32 +8,69 @@ form {
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
-  width: 100%;
+  width: 40%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 16px;
+  align-self: center;
 }
 
-input[type="submit"] {
-  background-color: #4CAF50;
+button[type="submit"] {
+  background-color: #4ca3af;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border: solid 2px black;
   transition: background-color 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover {
-  background-color: #3E8E41;
+button[type="submit"]:hover {
+
+  background-color: #ff21bc;
+}
+button[type="reset"] {
+  background-color: #4ca3af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: solid 2px black;
+  transition: background-color 0.3s ease-in-out;
+  align-items: left;
 }
 
+button[type="reset"]:hover {
+
+  background-color: #ff21bc;
+}
 label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+#return {
+  background-color: #4ca3af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: solid 2px black;
+  transition: background-color 0.3s ease-in-out;
+  text-align: left;
+}
+
+#return:hover {
+
+  background-color: #ff21bc;
 }

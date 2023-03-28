@@ -9,11 +9,15 @@
 </head>
 <body>
   <form action="#" th:action="@{/createUser}" th:object="${userDao}" method="post">
- <p>Nombre <input type="text" placeholder="nombre" th:field="*{nombre}"></p>
- <p>Primer Apellido <input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
-  <p>Segundo Apellido <input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
-  <p>email <input type="email" placeholder="email" th:field="*{email}"></p>
-  <button type="submit">enviar</button>
+ <p>Nombre <br><input type="text" placeholder="nombre" th:field="*{nombre}"></p>
+ <p>Primer Apellido <br><input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
+  <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
+  <p>email <br><input type="email" placeholder="email" th:field="*{email}"></p>
+  <div>
+  <button type="submit">Enviar</button>
+  <button type="reset">Reset</button>
+  </div>
 </form>
+<a href="/"><button id="return">Volver</button></a>
 </body>
 </html>

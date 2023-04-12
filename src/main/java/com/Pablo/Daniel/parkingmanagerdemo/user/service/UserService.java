@@ -4,10 +4,8 @@ import java.util.List;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.*;
 
 /**
- * La interfaz UserService define el contrato para el servicio que gestiona los
- * usuarios.
- * Proporciona dos métodos para leer todos los usuarios y registrar un nuevo
- * usuario.
+ * La interfaz UserService gestiona los usuarios.
+ * Proporciona dos métodos para leer usuarios y registrar uno nuevo
  * 
  * @author Daniel García Mesa
  * @author Pablo Javier Muñoz García

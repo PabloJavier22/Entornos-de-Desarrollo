@@ -16,14 +16,14 @@ import com.Pablo.Daniel.parkingmanagerdemo.user.domain.*;
  */
 
 public interface UserService {
-
+  
   /**
-   * Este método devuelve una lista de todos los usuarios
+   * Este método devuelve una lista de todos los usuarios 
    * 
-   * @return una lista de todos los usuarios
+   * @return una lista de todos los usuarios 
    */
   public List<User> readAll();
-
+  
   /**
    * registra userDao como un nuevo usuario.
    * 

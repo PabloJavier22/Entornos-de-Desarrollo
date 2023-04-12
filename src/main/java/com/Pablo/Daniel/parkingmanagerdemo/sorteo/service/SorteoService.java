@@ -6,7 +6,7 @@ import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Sorteo;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.SorteoDao;
 
 /**
- * Interfaz SorteoService
+ * Interfaz SorteoService para gestionar sorteos
  * @author Daniel García Mesa 
  * @author Pablo Javier Muñoz García
  * @version 1.0

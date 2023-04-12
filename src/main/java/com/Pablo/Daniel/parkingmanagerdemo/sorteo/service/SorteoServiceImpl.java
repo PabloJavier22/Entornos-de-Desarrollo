@@ -15,7 +15,7 @@ public class SorteoServiceImpl implements SorteoService{
 
   private SorteoRepository sorteoRepository;
 
-  @Autowired
+    @Autowired
     public SorteoServiceImpl(SorteoRepository sorteoRepository){
         this.sorteoRepository = sorteoRepository;
     }

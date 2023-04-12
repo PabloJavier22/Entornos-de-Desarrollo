@@ -12,7 +12,7 @@ public class TestUserDao {
       private UserDao pablo;
       @BeforeEach
       public void init(){
-       this.pablo = new UserDao("Pablo Javier","pmungar@g.educaand.es","Muñoz","García");
+       this.pablo = new UserDao("Pablo Javier","pmungar@g.educaand.es","Muñoz","García","alumno");
       }
       @Test
       public void check_user_nombre(){
@@ -95,6 +95,25 @@ public class TestUserDao {
           //Assert
           assertEquals(esperado, resultado);
       }
+      @Test
+    public void check_user_rol(){
+        //Arrange
+        String esperado = "alumno";
+        //Act
+        String resultado = pablo.getRol();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+    @Test
+    public void check_user_rol_set(){
+        //Arrange
+        String esperado = "alumno";
+        //Act
+        pablo.setRol("alumno");
+        String resultado = pablo.getRol();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
   
   }
   

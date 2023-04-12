@@ -22,6 +22,7 @@ public class User {
     private String email;
     private String primerApellido;
     private String segundoApellido;
+    private String rol;
 
     /**
      * Constructor vacio
@@ -37,13 +38,15 @@ public class User {
      * @param primerApellido  recoge el primer apellido de usuario
      * @param segundoApellido recoge el segundo apellido de usuario
      * @param email           recoge el email del usuario
+     * @param rol             recoge el rol del usuario
      */
-    public User(long idUsu, String nombre, String primerApellido, String segundoApellido, String email) {
+    public User(long idUsu, String nombre, String primerApellido, String segundoApellido, String email, String rol) {
         this.idUsu = idUsu;
         this.nombre = nombre;
         this.primerApellido = primerApellido;
         this.segundoApellido = segundoApellido;
         this.email = email;
+        this.rol=rol;
     }
 
     /**
@@ -135,5 +138,22 @@ public class User {
     public void setSegundoApellido(String segundoApellido) {
         this.segundoApellido = segundoApellido;
     }
+    /**
+     * getter para el rol del usuario
+     * 
+     * @return devuelve el rol del usuario
+     */
+    public String getRol() {
+      return rol;
+  }
+
+  /**
+   * setter para el rol del usuario
+   * 
+   * @param rol valor que cambia el rol del usuario
+   */
+  public void setRol(String rol) {
+      this.rol = rol;
+  }
 
 }

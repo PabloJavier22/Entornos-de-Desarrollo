@@ -25,8 +25,8 @@ public class UserServiceTest {
   @Test
   void testReadAll(){
     List<User> userMockedList = new ArrayList<>();
-    userMockedList.add(new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es"));
-    userMockedList.add(new User((long) 002,"Daniel","Garcia","Mesa","dgarmes@g.educaand.es"));
+    userMockedList.add(new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es","alumno"));
+    userMockedList.add(new User((long) 002,"Daniel","Garcia","Mesa","dgarmes@g.educaand.es","alumno"));
 
     UserRepository mockedRepository = mock(UserRepository.class);
 
@@ -45,7 +45,7 @@ public class UserServiceTest {
     UserRepository mockedRepository = mock(UserRepository.class);
 
     UserService service = new UserServiceImpl(mockedRepository);
-    UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2");
+    UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2","rol");
 
     service.register(userDao);
 

@@ -11,7 +11,7 @@ public class TestUser {
     private User pablo;
     @BeforeEach
     public void init(){
-     this.pablo = new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es");
+     this.pablo = new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es","alumno");
     }
     @Test
     public void check_user_id(){
@@ -110,6 +110,25 @@ public class TestUser {
         //Act
         pablo.setEmail("pmungar@g.educaand.es");
         String resultado = pablo.getEmail();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+    @Test
+    public void check_user_rol(){
+        //Arrange
+        String esperado = "alumno";
+        //Act
+        String resultado = pablo.getRol();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+    @Test
+    public void check_user_rol_set(){
+        //Arrange
+        String esperado = "alumno";
+        //Act
+        pablo.setRol("alumno");
+        String resultado = pablo.getRol();
         //Assert
         assertEquals(esperado, resultado);
     }

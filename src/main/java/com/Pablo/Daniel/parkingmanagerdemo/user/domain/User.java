@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 /**
+ * Clase user
  * @author Daniel García Mesa
  * @author Pablo Javier Muñoz García
  * @version 1.0

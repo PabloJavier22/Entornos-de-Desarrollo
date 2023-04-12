@@ -1,6 +1,7 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.domain;
 
 /**
+ * Clase userDao para los datos del usuario
  * @author Daniel García Mesa
  * @author Pablo Javier Muñoz García
  * @version 1.0

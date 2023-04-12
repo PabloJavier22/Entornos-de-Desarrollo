@@ -13,6 +13,13 @@
  <p>Primer Apellido <br><input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
   <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
   <p>email <br><input type="email" placeholder="email" th:field="*{email}"></p>
+  <div class="rol">
+    <input type="radio" id="profesor" name="rol" value="Profesor">
+    <label for="profesor">Profesor</label>
+    <input type="radio" id="alumno" name="rol" value="Alumno">
+    <label for="alumno">Alumno</label><br><br>
+
+  </div>
   <div>
   <button type="submit">Enviar</button>
   <button type="reset">Reset</button>

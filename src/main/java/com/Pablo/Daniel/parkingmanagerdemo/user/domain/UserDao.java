@@ -53,7 +53,7 @@ public class UserDao {
   /**
    * setter de nombre para userdao
    * 
-   * @param nombre valor que cambia nombre de userdao
+   * @param nombre valor que cambia nombre de userDao
    */
   public void setNombre(String nombre) {
     this.nombre = nombre;

@@ -1,9 +1,14 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.domain;
 
+import java.util.Set;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 
 /**
  * Clase user
@@ -24,6 +29,14 @@ public class User {
     private String segundoApellido;
     private String rol;
 
+
+    
+    
+    @JoinTable(name = "user_in_sorteo",
+                joinColumns = @JoinColumn(name = "user_id"),
+                inverseJoinColumns = @JoinColumn(name = "sorteo_id"))
+    @ManyToMany
+    private Set<User> includedIn;
     /**
      * Constructor vacio
      */

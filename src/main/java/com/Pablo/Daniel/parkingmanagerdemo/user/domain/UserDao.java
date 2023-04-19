@@ -15,13 +15,13 @@ public class UserDao {
   private String email;
   private String primerApellido;
   private String segundoApellido;
-  private String rol;
+  private Role rol;
 
   /**
    * Constructor vacio
    */
   public UserDao() {
-    this("", "", "", "","");
+    this("", "", "", "", null);
   }
 
   /**
@@ -33,7 +33,7 @@ public class UserDao {
    * @param segundoApellido
    * @param rol
    */
-  public UserDao(String nombre, String email, String primerApellido, String segundoApellido, String rol) {
+  public UserDao(String nombre, String email, String primerApellido, String segundoApellido, Role rol) {
     this.nombre = nombre;
     this.email = email;
     this.primerApellido = primerApellido;
@@ -118,7 +118,7 @@ public class UserDao {
    * 
    * @return devuelve el rol del usuario
    */
-  public String getRol() {
+  public Role getRol() {
     return rol;
   }
 
@@ -127,7 +127,7 @@ public class UserDao {
    * 
    * @param rol valor que cambia el rol del usuario
    */
-  public void setRol(String rol) {
+  public void setRol(Role rol) {
     this.rol = rol;
   }
 }

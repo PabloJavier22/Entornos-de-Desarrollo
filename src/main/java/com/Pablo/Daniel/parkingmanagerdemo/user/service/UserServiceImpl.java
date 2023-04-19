@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     public List<User> readAll() {
         return (List<User>) userRepository.findAll();
     }
-
+    
     /**
      * Método para registrar nuevos usuarios
      * 

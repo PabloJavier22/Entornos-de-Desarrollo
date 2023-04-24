@@ -145,7 +145,7 @@ public class User {
    * 
    * @return devuelve el rol del usuario
    */
-  public Role getRol() {
+  public Role getRole() {
     return rol;
   }
 
@@ -155,7 +155,7 @@ public class User {
    * @param rol valor que cambia el rol del usuario
    */
 
-  public void setRol(Role rol) {
+  public void setRole(Role rol) {
     this.rol = rol;
   }
 }

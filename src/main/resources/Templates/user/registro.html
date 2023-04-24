@@ -14,7 +14,7 @@
   <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
   <p>email <br><input type="email" placeholder="email" th:field="*{email}"></p>
   <p>ROL<br><div th:each="role : ${roles}">
-    <input name="role" type="radio" th:value="${role}"/><label for="role" th:text="| &nbsp; ${role} |">Something is wrong !</label>
+    <input name="role" type="radio" th:value="${role}"/><label for="role" th:text="${role.getDisplayName()}">Something is wrong !</label>
   </div></p>
   
   <div>

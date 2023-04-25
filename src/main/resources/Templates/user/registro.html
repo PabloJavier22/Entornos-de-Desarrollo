@@ -13,13 +13,10 @@
  <p>Primer Apellido <br><input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
   <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
   <p>email <br><input type="email" placeholder="email" th:field="*{email}"></p>
-  <div class="rol">
-    <input type="radio" id="profesor" name="rol" value="Profesor">
-    <label for="profesor">Profesor</label>
-    <input type="radio" id="alumno" name="rol" value="Alumno">
-    <label for="alumno">Alumno</label><br><br>
-
-  </div>
+  <p>ROL<br><div th:each="role : ${roles}">
+    <input name="role" type="radio" th:value="${role}"/><label for="role" th:text="${role.getDisplayName()}">Something is wrong !</label>
+  </div></p>
+  
   <div>
   <button type="submit">Enviar</button>
   <button type="reset">Reset</button>

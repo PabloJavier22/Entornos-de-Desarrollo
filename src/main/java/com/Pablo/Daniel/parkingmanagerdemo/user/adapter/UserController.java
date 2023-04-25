@@ -1,4 +1,7 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.adapter;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserService;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.Role;
 
 /**
  * Clase controller de usuarios
@@ -49,6 +53,8 @@ public class UserController {
      */
     @GetMapping("/createUser")
     public String displayRegistros(Model model){
+      List<Role> roles = Arrays.asList(Role.values());
+      model.addAttribute("roles", roles);
         UserDao userDao = new UserDao();
         model.addAttribute("userDao", userDao);
         return "user/registro";

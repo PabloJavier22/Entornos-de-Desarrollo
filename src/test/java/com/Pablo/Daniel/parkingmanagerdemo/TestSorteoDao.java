@@ -1,6 +1,7 @@
 package com.Pablo.Daniel.parkingmanagerdemo;
 
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.SorteoDao;
+import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Status;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,7 +12,7 @@ public class TestSorteoDao {
   private SorteoDao sorteo;
   @BeforeEach
   public void init(){
-   this.sorteo = new SorteoDao("Sorteo de prueba","01/02/2002","En curso");
+   this.sorteo = new SorteoDao("Sorteo de prueba","01/02/2002",Status.STARTED);
   }
   @Test
   public void check_sorteo_desc(){
@@ -54,19 +55,19 @@ public class TestSorteoDao {
   @Test
   public void check_sorteo_estado(){
       //Arrange
-      String esperado = "En curso";
+      Status esperado = Status.STARTED;
       //Act
-      String resultado = sorteo.getStatus();
+      Status resultado = sorteo.getStatus();
       //Assert
       assertEquals(esperado, resultado);
   }
   @Test
   public void check_sorteo_estado_set(){
       //Arrange
-      String esperado = "En proceso";
+      Status esperado = Status.STARTED;
       //Act
-      sorteo.setStatus("En proceso");
-      String resultado = sorteo.getStatus();
+      sorteo.setStatus(Status.STARTED);
+      Status resultado = sorteo.getStatus();
       //Assert
       assertEquals(esperado, resultado);
   }

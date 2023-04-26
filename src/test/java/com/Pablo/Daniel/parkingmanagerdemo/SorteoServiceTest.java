@@ -21,8 +21,8 @@ public class SorteoServiceTest {
   /**@Test
   void testReadAll(){
     List<Sorteo> sorteoMockedList = new ArrayList<>();
-    sorteoMockedList.add(new Sorteo(1,"sorteo1","hoy","terminado"));
-    sorteoMockedList.add(new Sorteo(2,"sorteo1","hoy","terminado"));
+    sorteoMockedList.add(new Sorteo(1,"sorteo1","hoy",Status.ENDED));
+    sorteoMockedList.add(new Sorteo(2,"sorteo1","hoy",Status.ENDED));
 
     SorteoRepository mockedRepository = mock(SorteoRepository.class);
 

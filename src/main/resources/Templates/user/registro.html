@@ -9,6 +9,9 @@
 </head>
 <body>
   <form action="#" th:action="@{/createUser}" th:object="${userDao}" method="post">
+    <div th:if="${#fields.hasErrors('*')}"> 
+      <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p> 
+  </div>
  <p>Nombre <br><input type="text" placeholder="nombre" th:field="*{nombre}"></p>
  <p>Primer Apellido <br><input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
   <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>

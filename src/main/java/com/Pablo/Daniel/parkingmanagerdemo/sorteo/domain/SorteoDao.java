@@ -12,14 +12,14 @@ public class SorteoDao {
 
   private String descripcion;
   private String fecha;
-  private String status;
+  private Status status;
 
   /**
    * Constructor vacío
    * 
    */
   public SorteoDao() {
-    this("", "", "");
+    this("", "", null);
   }
 
   /**
@@ -29,7 +29,7 @@ public class SorteoDao {
    * @param fecha       fecha de sorteo
    * @param estado      estado de sorteo
    */
-  public SorteoDao(String descripcion, String fecha, String estado) {
+  public SorteoDao(String descripcion, String fecha, Status estado) {
     this.descripcion = descripcion;
     this.fecha = fecha;
     this.status = estado;
@@ -76,7 +76,7 @@ public class SorteoDao {
    * 
    * @return devuelve el estado del sorteo
    */
-  public String getStatus() {
+  public Status getStatus() {
     return status;
   }
 
@@ -85,7 +85,7 @@ public class SorteoDao {
    * 
    * @param estado
    */
-  public void setStatus(String status) {
+  public void setStatus(Status status) {
     this.status = status;
   }
 }

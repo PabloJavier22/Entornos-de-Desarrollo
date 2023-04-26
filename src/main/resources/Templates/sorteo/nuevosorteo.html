@@ -9,6 +9,9 @@
 </head>
 <body>
   <form action="#" th:action="@{/createSorteo}" th:object="${sorteoDao}" method="post">
+    <div th:if="${#fields.hasErrors('*')}"> 
+      <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p> 
+  </div>
  <p>Descripción<br> <input type="text" placeholder="descripcion" th:field="*{descripcion}"></p>
  <p>Fecha<br> <input type="text" placeholder="fecha" th:field="*{fecha}"></p>
  <p>Estado<br><div th:each="status : ${status}">

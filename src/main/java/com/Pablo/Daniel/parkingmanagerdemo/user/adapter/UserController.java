@@ -57,11 +57,15 @@ public class UserController {
      */
     @GetMapping("/createUser")
     public String displayRegistros(Model model){
-      List<Role> roles = Arrays.asList(Role.values());
-      model.addAttribute("roles", roles);
+      AsignarRol(model);
         UserDao userDao = new UserDao();
         model.addAttribute("userDao", userDao);
         return "user/registro";
+    }
+
+    private void AsignarRol(Model model) {
+      List<Role> roles = Arrays.asList(Role.values());
+      model.addAttribute("roles", roles);
     }
 
     /**
@@ -75,7 +79,7 @@ public class UserController {
       //Si ocurre algún error de validación automática 
       if (bindingresult.hasErrors()){
         model.addAttribute("userDao", userDao);
-
+        AsignarRol(model);
         return "user/registro";
       }
 
@@ -85,6 +89,7 @@ public class UserController {
       // Si ya existe un usuario con ese correo
         catch(UserExistsException e){
           model.addAttribute("userDao", userDao);
+          AsignarRol(model);
           bindingresult.reject("email", "Ya existe el usuario");
           return "user/registro";
           

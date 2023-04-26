@@ -12,7 +12,7 @@
  <p>Nombre <br><input type="text" placeholder="nombre" th:field="*{nombre}"></p>
  <p>Primer Apellido <br><input type="text" placeholder="primerApellido" th:field="*{primerApellido}"></p>
   <p>Segundo Apellido <br><input type="text" placeholder="segundoApellido" th:field="*{segundoApellido}"></p>
-  <p>email <br><input type="email" placeholder="email" th:field="*{email}"></p>
+  <p>Email <br><input type="email" placeholder="email" th:field="*{email}"></p>
   <p>ROL<br><div th:each="role : ${roles}">
     <input name="role" type="radio" th:value="${role}"/><label for="role" th:text="${role.getDisplayName()}">Something is wrong !</label>
   </div></p>

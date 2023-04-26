@@ -18,7 +18,7 @@ import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Status;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.service.SorteoService;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.service.SorteoServiceImpl;
 public class SorteoServiceTest {
-  /**@Test
+  @Test
   void testReadAll(){
     List<Sorteo> sorteoMockedList = new ArrayList<>();
     sorteoMockedList.add(new Sorteo(1,"sorteo1","hoy",Status.ENDED));
@@ -47,5 +47,5 @@ public class SorteoServiceTest {
 
     verify(mockedRepository).save(any());
 
-  }*/
+  }
 }

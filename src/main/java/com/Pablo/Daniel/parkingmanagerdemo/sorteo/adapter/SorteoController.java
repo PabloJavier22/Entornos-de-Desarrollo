@@ -1,5 +1,8 @@
 package com.Pablo.Daniel.parkingmanagerdemo.sorteo.adapter;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.SorteoDao;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.service.SorteoService;
+import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Status;
 
 /**
  * Clase controlador de sorteo
@@ -49,11 +53,14 @@ public class SorteoController {
    * @param model
    * @return el formulario para crear un nuevo Sorteo
    */
+
   @GetMapping("/createSorteo")
-  public String displayRegistros(Model model) {
-    SorteoDao sorteoDao = new SorteoDao();
-    model.addAttribute("sorteoDao", sorteoDao);
-    return "sorteo/nuevosorteo";
+  public String displayStatus(Model model){
+    List<Status> state = Arrays.asList(Status.values());
+    model.addAttribute("status", state);
+      SorteoDao sorteoDao = new SorteoDao();
+      model.addAttribute("sorteoDao", sorteoDao);
+      return "sorteo/nuevosorteo";
   }
 
   /**

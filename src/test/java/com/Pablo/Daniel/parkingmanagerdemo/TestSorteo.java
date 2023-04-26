@@ -76,7 +76,7 @@ public class TestSorteo {
         //Arrange
         String esperado = "En curso";
         //Act
-        String resultado = sorteo.getEstado();
+        String resultado = sorteo.getStatus();
         //Assert
         assertEquals(esperado, resultado);
     }
@@ -85,8 +85,8 @@ public class TestSorteo {
         //Arrange
         String esperado = "En proceso";
         //Act
-        sorteo.setEstado("En proceso");
-        String resultado = sorteo.getEstado();
+        sorteo.setStatus("En proceso");
+        String resultado = sorteo.getStatus();
         //Assert
         assertEquals(esperado, resultado);
     }

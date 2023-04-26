@@ -25,7 +25,7 @@ public class Sorteo {
   private int IDSrt;
   private String descripcion;
   private String fecha;
-  private String estado;
+  private String Status;
 
   @ManyToMany(mappedBy = "includedIn")
   private Set<User> UsersIncluded;
@@ -42,12 +42,12 @@ public class Sorteo {
    * @param IDSrt       ID de sorteo
    * @param descripcion descripción de sorteo
    * @param fecha       fecha de sorteo
-   * @param estado      estado de sorteo
+   * @param status      estado de sorteo
    */
-  public Sorteo(int IDSrt, String descripcion, String fecha, String estado) {
+  public Sorteo(int IDSrt, String descripcion, String fecha, String status) {
     this.descripcion = descripcion;
     this.fecha = fecha;
-    this.estado = estado;
+    this.Status = status;
     this.IDSrt = IDSrt;
   }
 
@@ -92,8 +92,8 @@ public class Sorteo {
    * 
    * @return devuelve el estado del sorteo
    */
-  public String getEstado() {
-    return estado;
+  public String getStatus() {
+    return Status;
   }
 
   /**
@@ -101,8 +101,8 @@ public class Sorteo {
    * 
    * @param estado
    */
-  public void setEstado(String estado) {
-    this.estado = estado;
+  public void setStatus(String Status) {
+    this.Status = Status;
   }
 
   /**

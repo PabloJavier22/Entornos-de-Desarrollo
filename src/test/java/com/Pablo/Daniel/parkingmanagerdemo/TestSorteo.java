@@ -10,7 +10,7 @@ import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Sorteo;
 import net.bytebuddy.implementation.bytecode.StackSize;
 
 public class TestSorteo {
-   /** private Sorteo sorteo;
+    private Sorteo sorteo;
     @BeforeEach
     public void init(){
      this.sorteo = new Sorteo(001,"Sorteo de prueba","01/02/2002",Status.STARTED);
@@ -91,5 +91,5 @@ public class TestSorteo {
         Status resultado = sorteo.getStatus();
         //Assert
         assertEquals(esperado, resultado);
-    }*/ 
+    }
 }

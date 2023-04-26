@@ -47,9 +47,9 @@ public class TestSorteo {
     @Test
     public void check_sorteo_desc_set(){
         //Arrange
-        String esperado = "Sorteo de pruebas";
+        String esperado = "Sorteo de prueba";
         //Act
-        sorteo.setDescripcion("Sorteo de pruebas");
+        sorteo.setDescripcion("Sorteo de prueba");
         String resultado = sorteo.getDescripcion();
         //Assert
         assertEquals(esperado, resultado);

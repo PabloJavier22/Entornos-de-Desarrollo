@@ -56,11 +56,15 @@ public class SorteoController {
 
   @GetMapping("/createSorteo")
   public String displayStatus(Model model){
-    List<Status> state = Arrays.asList(Status.values());
-    model.addAttribute("status", state);
+    AsignarStatus(model);
       SorteoDao sorteoDao = new SorteoDao();
       model.addAttribute("sorteoDao", sorteoDao);
       return "sorteo/nuevosorteo";
+  }
+
+  private void AsignarStatus(Model model) {
+    final List<Status> state = Arrays.asList(Status.values());
+    model.addAttribute("status", state);
   }
 
   /**

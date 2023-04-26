@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.Role;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
 
 public class TestUserDao {
@@ -12,7 +13,7 @@ public class TestUserDao {
       private UserDao pablo;
       @BeforeEach
       public void init(){
-       this.pablo = new UserDao("Pablo Javier","pmungar@g.educaand.es","Muñoz","García");
+       this.pablo = new UserDao("Pablo Javier","pmungar@g.educaand.es","Muñoz","García",Role.STUDENT);
       }
       @Test
       public void check_user_nombre(){
@@ -95,6 +96,25 @@ public class TestUserDao {
           //Assert
           assertEquals(esperado, resultado);
       }
+      @Test
+    public void check_user_rol(){
+        //Arrange
+        Role esperado = Role.STUDENT;
+        //Act
+        Role resultado = pablo.getRole();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
+    @Test
+    public void check_user_rol_set(){
+        //Arrange
+        Role esperado = Role.STUDENT;
+        //Act
+        pablo.setRole(Role.STUDENT);
+        Role resultado = pablo.getRole();
+        //Assert
+        assertEquals(esperado, resultado);
+    }
   
   }
   

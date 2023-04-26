@@ -11,7 +11,9 @@
   <form action="#" th:action="@{/createSorteo}" th:object="${sorteoDao}" method="post">
  <p>Descripción<br> <input type="text" placeholder="descripcion" th:field="*{descripcion}"></p>
  <p>Fecha<br> <input type="text" placeholder="fecha" th:field="*{fecha}"></p>
-  <p>Estado<br> <input type="text" placeholder="estado" th:field="*{estado}"></p>
+ <p>Estado<br><div th:each="status : ${status}">
+  <input name="status" type="radio" th:value="${status}"/><label for="status" th:text="${status.getDisplayStatus()}">Something is wrong !</label>
+</div></p>
   <div>
     <button type="submit">Enviar</button>
     <button type="reset">Reset</button>

@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.Pablo.Daniel.parkingmanagerdemo.user.domain.Role;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.User;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserRepository;
@@ -25,8 +26,8 @@ public class UserServiceTest {
   @Test
   void testReadAll(){
     List<User> userMockedList = new ArrayList<>();
-    userMockedList.add(new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es"));
-    userMockedList.add(new User((long) 002,"Daniel","Garcia","Mesa","dgarmes@g.educaand.es"));
+    userMockedList.add(new User((long) 001,"Pablo Javier","Muñoz","García","pmungar@g.educaand.es",Role.STUDENT));
+    userMockedList.add(new User((long) 002,"Daniel","Garcia","Mesa","dgarmes@g.educaand.es",Role.STUDENT));
 
     UserRepository mockedRepository = mock(UserRepository.class);
 
@@ -45,9 +46,9 @@ public class UserServiceTest {
     UserRepository mockedRepository = mock(UserRepository.class);
 
     UserService service = new UserServiceImpl(mockedRepository);
-    UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2");
+    UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2",Role.STUDENT);
 
-    service.register(userDao);
+    //service.register(userDao);
 
     verify(mockedRepository).save(any());
 

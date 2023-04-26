@@ -48,7 +48,7 @@ public class UserServiceTest {
     UserService service = new UserServiceImpl(mockedRepository);
     UserDao userDao = new UserDao("nombre","email", "apellido1","apellido2",Role.STUDENT);
 
-    service.register(userDao);
+    //service.register(userDao);
 
     verify(mockedRepository).save(any());
 

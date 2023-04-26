@@ -4,13 +4,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Pablo.Daniel.parkingmanagerdemo.user.service.UserService;
+
+import jakarta.validation.Valid;
+
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
+import com.Pablo.Daniel.parkingmanagerdemo.core.exceptions.UserExistsException;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.Role;
 
 /**
@@ -67,8 +71,24 @@ public class UserController {
      * @return devuelve la pagina de la lista de sorteo
      */
     @PostMapping("/createUser")
-    public String createUser(@ModelAttribute UserDao userDao){
+    public String createUser(@Valid @ModelAttribute UserDao userDao, BindingResult bindingresult, Model model){
+      //Si ocurre algún error de validación automática 
+      if (bindingresult.hasErrors()){
+        model.addAttribute("userDao", userDao);
+
+        return "user/registro";
+      }
+
+      try{
         this.userService.register(userDao);
+      }
+      // Si ya existe un usuario con ese correo
+        catch(UserExistsException e){
+          model.addAttribute("userDao", userDao);
+          bindingresult.reject("email", "Ya existe el usuario");
+          return "user/registro";
+          
+        }
         return "redirect:/usuarios";
     }
 

@@ -1,6 +1,8 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.service;
 
 import java.util.List;
+
+import com.Pablo.Daniel.parkingmanagerdemo.core.exceptions.UserExistsException;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.*;
 
 /**
@@ -27,5 +29,13 @@ public interface UserService {
    * 
    * @param userDao el UserDao que se registra como un nuevo usuario.
    */
-  public void register(UserDao userDao);
+  public void register(UserDao userDao) throws UserExistsException;
+  /**
+   * A partir del email dice si un usuario ya existe o no
+   * 
+   * @param email
+   * @return si el usuario ya existe o no
+   */
+  public boolean userExists(String email);
+
 }

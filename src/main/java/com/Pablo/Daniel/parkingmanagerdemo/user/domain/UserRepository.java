@@ -16,4 +16,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
+  /**
+   * Encuentra un usuario a partir de su email
+   * 
+   * @param email
+   * @return el usuario con ese email
+   */
+  public User findByEmail(String email);
+
 }

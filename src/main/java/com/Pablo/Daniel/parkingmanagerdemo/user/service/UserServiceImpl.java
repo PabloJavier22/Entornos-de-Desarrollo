@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.Pablo.Daniel.parkingmanagerdemo.core.exceptions.UserExistsException;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.User;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserDao;
 import com.Pablo.Daniel.parkingmanagerdemo.user.domain.UserRepository;
@@ -48,10 +50,19 @@ public class UserServiceImpl implements UserService {
      * @param userDao
      */
     @Override
-    public void register(UserDao userDao) {
+    public void register(UserDao userDao) throws UserExistsException{
+      if(userExists(userDao.getEmail())){
+        throw new UserExistsException();
+      }
         User user = new User();
         BeanUtils.copyProperties(userDao, user);
         this.userRepository.save(user);
+    }
+
+    @Override
+    public boolean userExists(String email) {
+      
+      return this.userRepository.findByEmail(email) != null ? true : false;
     }
 
 }

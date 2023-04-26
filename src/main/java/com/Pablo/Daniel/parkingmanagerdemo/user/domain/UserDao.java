@@ -1,5 +1,10 @@
 package com.Pablo.Daniel.parkingmanagerdemo.user.domain;
 
+import io.micrometer.common.lang.NonNull;
+import jakarta.annotation.Nonnull;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 /**
  * Clase userDao para los datos del usuario
  * 
@@ -11,8 +16,12 @@ package com.Pablo.Daniel.parkingmanagerdemo.user.domain;
 
 public class UserDao {
 
+  @NotBlank(message = "El nombre es obligatorio")
   private String nombre;
+  @Email(message = "El formato del correo no es el adecuado")
+  @NotBlank(message = "El correo no puede ser vacío")
   private String email;
+  @NotBlank(message = "El primer apellido es obligatorio")
   private String primerApellido;
   private String segundoApellido;
   private Role rol;

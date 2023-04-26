@@ -4,14 +4,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Status;
 import com.Pablo.Daniel.parkingmanagerdemo.sorteo.domain.Sorteo;
+
+import net.bytebuddy.implementation.bytecode.StackSize;
 
 public class TestSorteo {
     private Sorteo sorteo;
     @BeforeEach
     public void init(){
-     this.sorteo = new Sorteo(001,"Sorteo de prueba","01/02/2002","En curso");
+     this.sorteo = new Sorteo(001,"Sorteo de prueba","01/02/2002",Status.STARTED);
     }
 
     @Test
@@ -74,19 +76,19 @@ public class TestSorteo {
     @Test
     public void check_sorteo_estado(){
         //Arrange
-        String esperado = "En curso";
+        Status esperado = Status.STARTED;
         //Act
-        String resultado = sorteo.getStatus();
+        Status resultado = sorteo.getStatus();
         //Assert
         assertEquals(esperado, resultado);
     }
     @Test
     public void check_sorteo_estado_set(){
         //Arrange
-        String esperado = "En proceso";
+        Status esperado = Status.STARTED;
         //Act
-        sorteo.setStatus("En proceso");
-        String resultado = sorteo.getStatus();
+        sorteo.setStatus(Status.STARTED);
+        Status resultado = sorteo.getStatus();
         //Assert
         assertEquals(esperado, resultado);
     }
